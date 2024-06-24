@@ -17,7 +17,7 @@ const dominiosPermitidos = [process.env.FRONTEND_URL]
 
 const corsOptions ={
     origin: function(origin,callback){
-        if (dominiosPermitidos.indexOf(origin) !== -1 || !origin) {
+        if (dominiosPermitidos.indexOf(origin) !== -1 ) {
             //El origen del request esta permitidoS
             callback(null,true);
         }else{
