@@ -28,9 +28,9 @@ const dominiosPermitidos = ['*']
 
 
 app.use(cors(corsOptions));
-app.use('/api/veterinarios',veterinarioRoutes);
-app.use('/api/pacientes',pacienteRouter);
-app.use('/prueba',(req,res)=>{
+app.use('/api/veterinarios',cors(corsOptions),veterinarioRoutes);
+app.use('/api/pacientes',cors(corsOptions),pacienteRouter);
+app.use('/prueba',cors(corsOptions),(req,res)=>{
     res.json({msg: 'Si funcciona'})
 })
 
